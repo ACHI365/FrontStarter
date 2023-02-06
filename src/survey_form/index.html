@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Archil Melikidze's Survey</title>
+    <link rel="icon" href="img/tutor.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="main.js"></script>
+    <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("ymzuWp1XKFIKXLgBR");
+        })();
+    </script>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1 id="title">KIU tutors survey (A.M)</h1>
+        <p id="description">Thank you for taking the time to help us improve the office hours
+        </p>
+    </header>
+    <form id="survey-form" onsubmit="message(); return false">
+        <div class="form-group">
+            <label id="name-label" for="name">Name</label>
+            <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    class="form-control"
+                    placeholder="Enter your name"
+                    required
+            />
+        </div>
+        <div class="form-group">
+            <label id="email-label" for="email">Email</label>
+            <input
+                    type="email"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                    name="email"
+                    id="email"
+                    class="form-control"
+                    placeholder="Enter your Email"
+                    required
+            />
+        </div>
+        <div class="form-group">
+            <label
+                    id="number-label" for="number"
+            >Ongoing semester<span class="clue">(optional)</span></label>
+            <input
+                    type="number"
+                    name="semester"
+                    id="number"
+                    min="1"
+                    max="8"
+                    class="form-control"
+                    placeholder="Semester"
+            />
+        </div>
+        <div class="form-group">
+            <p>Which option best describes your current role?</p>
+            <label for="dropdown"></label><select id="dropdown" name="role" class="form-control" required>
+            <option disabled selected value>Select your role in offices</option>
+            <option value="weekly">Usual(every-week) listener</option>
+            <option value="occasional">Occasional attendant</option>
+            <option value="finals">Final revision enjoyer</option>
+            <option value="online">Always there, but online</option>
+            <option value="other">Other</option>
+        </select>
+        </div>
+        <div class="form-group">
+            <p>Would you recommend my office hours to a friend in need?</p>
+            <label>
+                <input
+                        name="user-recommend"
+                        value="definitely"
+                        type="radio"
+                        class="input-radio"
+                        checked
+                />Definitely</label
+            >
+            <label>
+                <input
+                        name="user-recommend"
+                        value="of-course"
+                        type="radio"
+                        class="input-radio"
+                />Of course</label
+            >
+            <label
+            ><input
+                    name="user-recommend"
+                    value="sure"
+                    type="radio"
+                    class="input-radio"
+            />Sure, silly question(ეს რა არის)</label
+            >
+        </div>
+        <div class="form-group">
+            <p>
+                What would you like to see improved?
+                <span class="clue">(Check all that apply)</span>
+            </p>
+
+            <label
+            ><input
+                    id="check1"
+                    name="prefer"
+                    value="interaction"
+                    type="checkbox"
+                    class="input-checkbox"
+            />Interaction</label
+            >
+            <label>
+                <input
+                        id="check2"
+                        name="prefer"
+                        value="amount"
+                        type="checkbox"
+                        class="input-checkbox"
+                />Amount of hours</label
+            >
+            <label
+            ><input
+                    id="check3"
+                    name="prefer"
+                    value="online"
+                    type="checkbox"
+                    class="input-checkbox"
+            />Online-friendly content</label
+            >
+            <label
+            ><input
+                    id="check4"
+                    name="prefer"
+                    value="other"
+                    type="checkbox"
+                    class="input-checkbox"
+            />Other</label
+            >
+        </div>
+
+        <div class="form-group">
+            <p>Please provide further comments or suggestions to improve offices</p>
+            <label for="comments"></label><textarea
+                id="comments"
+                class="input-textarea"
+                name="comment"
+                placeholder="Enter your comment here..."
+        ></textarea>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" id="submit" class="submit-button">
+                Submit
+            </button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
